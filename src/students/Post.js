@@ -9,15 +9,16 @@ class Post extends Component {
         // this.props = props
         // props - не змінні данні, які призначені тільки для зчитування!!!
         // state - данні які змінюються!!!
-
         this.state = {
             likes: 0
         }
-        this.addLikes = this.addLikes.bind(this)
+        // this.addLikes = this.addLikes.bind(this),щоб не писати цього можна
+        // переробити функцію addLikes() на стрілочну addLikes = () => {}
     }
 
-    addLikes() {
-        // return this.setState(this.state, () => this.state.likes++)
+    addLikes = () => {
+        return this.setState({likes: ++this.state.likes})
+        //  return this.setState(this.state, () => {++this.state.likes})
      }
 
     render() {
@@ -37,3 +38,4 @@ class Post extends Component {
 export default Post
 
 // Parent ====to====> Child
+

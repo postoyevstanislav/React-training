@@ -1,6 +1,6 @@
 import React from 'react';
 // import Post from './students/Post'
-import UserList from './users/users-controller'
+import UsersList from './users/users-controller'
 // import Student from'./students/students'
 
 
@@ -41,7 +41,7 @@ const App = (props) => {
     // </div>
     
     <div>
-        <UserList />
+        <UsersList />
     </div> ) }
 
 

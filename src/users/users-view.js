@@ -39,5 +39,30 @@ export default {
         &:hover {
             opacity: 1;
         }
+    `,
+    NameInput: styled.input `
+    width: 100px;
+    heigth: 20px;
+    padding: 5px;
+    display: block;
+    &.focus {
+        outline: none!important;
+    }
+    `,
+    AgeInput: styled.input `
+    width: 40px;
+    heigth: 20px;
+    padding: 5px;
+    margin-top: 5px;
+    display: block;
+    &.focus {
+        outline: none!important;
+    }
+    `,
+    Label: styled.div `
+    font-size: 12px;
+    color: #999;
+    font-weight: 400;
+    margin: 3px 0;
     `
 }

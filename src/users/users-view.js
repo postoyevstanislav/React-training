@@ -20,6 +20,7 @@ export default {
         color: #6d6d6d;
         font-weight: 600;
         margin-bottom: 5px;
+        decoration: none;
     `,
    Age: styled.div `
         color: #6d6d6d;

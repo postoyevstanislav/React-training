@@ -1,8 +1,11 @@
 import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 // import Post from './students/Post'
-import UsersList from './users/users-controller'
 // import Student from'./students/students'
-
+import Home from './home/home'
+import UsersList from './users/users-controller';
+import Documentation from './documentation/documentation'
+import SingleUser from './single-user/single-user'
 
 // const studentList = [
 //     {
@@ -40,9 +43,17 @@ const App = (props) => {
     //     <Post {...post}/>
     // </div>
     
-    <div>
-        <UsersList />
-    </div> ) }
+    // <div>
+    //     <UsersList />
+    // </div> ) }
 
+    <Router>
+       <Route path = '/' component = {Home} />
+       <Route path = '/userslist' component = {UsersList} />
+       <Route path = '/user/:id' component = {SingleUser} />
+       <Route path = '/documentation' component = {Documentation} />    
+    </Router>
+
+    ) }
 
     export default App

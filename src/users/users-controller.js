@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom'
 // import './users.css'
 import Users from './users-view';
 import  axios from 'axios'
@@ -52,7 +53,9 @@ class User extends Component {
                 :
 
                 <div>
-                <Users.Name>{this.state.name}</Users.Name>
+                <Users.Name> 
+                    <Link to = {`/user/${this.props.id}`}>{this.state.name}</Link> 
+                </Users.Name> 
                 <Users.Age>Age: {this.state.age}</Users.Age>
                 <Users.Button type = 'EDIT' onClick = {this.toggleEdit}>Edit</Users.Button>
                 <Users.Button type = 'DELETE'>Delete</Users.Button>

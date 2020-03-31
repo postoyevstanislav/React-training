@@ -20,6 +20,7 @@ class SingleUser extends Component {
     // }
     async getUser() {
         const { id }  = this.props.match.params
+        console.log('id: ', this.props.match.params)
         const response = await fetch(`https://test-users-api.herokuapp.com/users/${id}`)
         const data = await response.json()
         console.log('your name: ',data.data.name)

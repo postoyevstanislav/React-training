@@ -26,6 +26,25 @@ class User extends Component {
         this.setState({isEdit: !this.state.isEdit})
     }
 
+    editUser = (id) => {
+        const user = {
+            name: this.state.name,
+            age: this.state.age
+        }
+        axios.put(`https://test-users-api.herokuapp.com/users/${id}`, user)
+        .then( res => {
+            this.toggleEdit()
+        })
+        
+    }
+
+    deleteUser = (id) => {
+        axios.delete(`https://test-users-api.herokuapp.com/users/${id}`)
+        .then( res => {
+            
+        })
+    }
+
     changeName = (event) => {
         const {value} = event.target
         this.setState({name: value})
@@ -39,7 +58,7 @@ class User extends Component {
     render() {
         return (
             <Users.Wrapper>
-                {this.state.isEdit ?
+                { this.state.isEdit ?
                 <div>
                 <Users.Label>
                     Name: <Users.NameInput value = {this.state.name} onChange={this.changeName} />
@@ -47,7 +66,7 @@ class User extends Component {
                 <Users.Label>
                     Age: <Users.AgeInput value = {this.state.age} onChange={this.changeAge} />
                 </Users.Label>
-                <Users.Button type = 'ADD' onClick = {this.toggleEdit}>Add</Users.Button> 
+                <Users.Button type = 'ADD' onClick = {() => this.editUser(this.props.id)}>Add</Users.Button> 
                 </div>
 
                 :
@@ -59,7 +78,7 @@ class User extends Component {
                 <Users.Age>Age: {this.state.age}</Users.Age>
                 <Users.Button type = 'EDIT' onClick = {this.toggleEdit}>Edit</Users.Button>
                 <Users.Button type = 'DELETE'>Delete</Users.Button>
-                </div>}
+                </div> }
             </Users.Wrapper>
         )
     }

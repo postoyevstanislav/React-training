@@ -6,9 +6,9 @@ const Home = (props) => {
         <div>
             <nav>
                 <ul>
-                    <li><NavLink to ='/'> Головна </NavLink></li>
-                    <li><NavLink to ='/userslist'> Список юзерів </NavLink></li>
-                    <li><NavLink to ='/documentation'> Документація </NavLink></li>
+                    <li><NavLink to ='/'> Home </NavLink></li>
+                    <li><NavLink to ='/userslist'> Users List </NavLink></li>
+                    <li><NavLink to ='/documentation'> Documents </NavLink></li>
                 </ul>
             </nav>
         </div>

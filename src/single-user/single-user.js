@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import  axios from 'axios'
 
 class SingleUser extends Component {
     constructor(props) {
@@ -10,14 +9,6 @@ class SingleUser extends Component {
     this.getUser()
     }
 
-    // getUser = () => {
-    //     const { id }  = this.props.match.params
-    //     axios.get(`https://test-users-api.herokuapp.com/users/${id}`)
-    //     .then(({data}) => {
-    //         this.setState({userInfo: data.data})
-    //         console.log('user: ', this.state.userInfo)
-    //     })
-    // }
     async getUser() {
         const { id }  = this.props.match.params
         console.log('id: ', this.props.match.params)
